@@ -1,69 +1,66 @@
-## Police Incident Report Analyzer
+# Datasheet for Incident Report Data
 
-### Overview
+## Motivation
 
-- **Type of Data:** Structured data containing processed incident reports.
-- **Purpose:** To analyze patterns in incidents (locations, frequencies, nature of incidents, time-based trends). Potentially used for resource allocation, risk assessment, or identifying areas needing additional support services.
-- **Source:** Derived from incident reports in PDF format. The original issuer or creator of the PDF incident reports is Norman Police Department.
+- **For what purpose was the dataset created?**  
+  This dataset was created to analyze incidents reported in PDF formats, sourced from specific URLs. The primary goal is to augment the data with additional context such as weather conditions at the time of the incident and the geographical orientation relative to the town's center, aiming to provide richer insights for analytical purposes.
 
-### Methods
+- **Who created the dataset and on behalf of which entity?**  
+  The dataset creator and the entity behind it are not specified. This script is designed as a general tool for processing and augmenting incident report data.
 
-- **Collection:**
-  - Incident data is initially recorded in PDF reports.
-  - Python code is used to:
-    - Fetch incident reports from URLs (provided in a CSV file).
-    - Extract relevant data from PDFs using regular expressions.
-    - Augment data with:
-      - Day of the week
-      - Time of day
-      - Geolocation coordinates (if possible)
-      - WMO codes for weather conditions
-      - Rankings of locations and incident types based on frequency
-      - Side of town determination
-      - EMSSTAT status inference (True if EMS-related)
-- **Preprocessing:**
-  - Regular expressions extract structured data elements from semi-structured PDF text.
-  - Geocoding is used to translate addresses into latitude/longitude coordinates.
-  - Data transformations are used to generate rankings and categorize incidents.
+- **Who funded the creation of the dataset?**  
+  Funding information is not provided.
 
-### Variables
+## Composition
 
-- **Day of the Week:** Day of the incident occurrence (1-7, where 1=Sunday)
-- **Time of Day:** Hour of the incident (0-23)
-- **Weather:** WMO weather code (interpretation requires WMO Code manual)
-- **Location Rank:** Rank of the incident location based on frequency of incidents.
-- **Side of Town:** Side of the town relative to a given reference point (N, S, E, W, NW, NE, SW, SE).
-- **Incident:** Incident type (e.g., Contact a Subject, Larceny)
-- **Nature Rank:** Rank of the incident type based on frequency.
-- **EMSSTAT:** Whether the incident is EMS-related (True or False)
+- **What do the instances that comprise the dataset represent?**  
+  Instances represent individual incidents, including details such as the date and time, location, nature of the incident, and additional augmented data like weather conditions and geographical direction from the town's center.
 
-### Data Format
+- **How many instances are there in total (and in each split, if applicable)?**  
+  The total number of instances depends on the input URLs and the data they contain.
 
-- **File Format:** Exported as CSV (based on the implied output).
-- **Structure:** Tabular data (rows and columns)
+- **Does the dataset contain all possible instances or is it a sample?**  
+  The dataset is a sample, dependent on the input URLs provided for incident reports in PDF format.
 
-### Quality and Limitations
+- **What data does each instance consist of?**  
+  Each instance includes the incident date and time, incident number, location, nature, initial responding officer or entity (incident ORI), and augmented data such as weather code, side of town, etc.
 
-- **Quality Factors:**
-  - **Dependency on PDF Structure:** Changes in the PDF report format might break the regular expressions for data extraction.
-  - **Geocoding Accuracy:** The accuracy of address-to-coordinate conversion can vary. Default coordinates are used in case of errors.
-  - **WMO Interpretation:** Requires external WMO documentation to understand the weather codes.
-- **Limitations**
-  - **Missing Context:** Understanding some fields (Incident, EMSSTAT) might require domain knowledge of police/EMS terminology.
-  - **Representativeness:** The data may only represent a specific region or a filtered set of incident reports.
+- **Is there any missing information from individual instances?**  
+  Information might be missing if the source PDFs do not contain it or if data augmentation processes (e.g., weather code retrieval, location geocoding) fail.
 
-### Use Cases
+## Collection Process
 
-- **Trend Analysis:** Examining temporal patterns of incidents (time of day, day of week, weather-related).
-- **Spatial Visualization:** Mapping incident hotspots or variations by the side of town.
-- **Resource Planning:** Potentially informing police or EMS staffing/placement decisions (requires broader context).
+- **How was the data associated with each instance acquired?**  
+  Data is initially extracted from PDFs containing incident reports. It's then augmented with weather codes retrieved via the Open-Meteo API and geographical analysis using the `geopy` library.
 
-### Privacy and Ethical Considerations
+- **Who was involved in the data collection process?**  
+  The process is automated; involvement is limited to the individual or entity executing the script and providing URLs for the source PDFs.
 
-- **Anonymization:** Ensure any personally identifiable information or addresses have been removed or anonymized.
-- **Sensitive Incident Types:** Be aware that some incident types may be sensitive in nature. Use and analyze the data in a responsible manner.
+## Preprocessing/cleaning/labeling
 
-### Additional Notes
+- **Was any preprocessing/cleaning/labeling of the data done?**  
+  Yes, the script tokenizes the text extracted from PDFs, parses relevant incident data, and augments it with additional information like weather conditions and geographical direction.
 
-- **WMO Documentation:** The specific WMO Code table used is essential for making sense of the Weather column.
-- **EMSSTAT Inference:** Provide more details or insights on how the EMSSTAT status is determined.
+- **Is the software used to preprocess/clean/label the instances available?**  
+  The script itself serves as the preprocessing tool. It uses libraries such as `requests`, `urllib.request`, `pypdf`, `geopy`, and `datetime` for its operations.
+
+## Uses
+
+- **Has the dataset been used for any tasks already?**  
+  The script is intended for general use in processing and augmenting incident report data. Specific use cases are not provided.
+
+- **What tasks could the dataset be used for?**  
+  The dataset could be used for analytical studies on incidents, such as understanding trends over time, the impact of weather conditions on incident rates, or geographical analysis of incidents within a town or city.
+
+## Distribution
+
+- **How will the dataset be distributed?**  
+  The dataset's distribution is not applicable here as it's generated dynamically by the script. However, the script itself can be shared and used by others.
+
+## Maintenance
+
+- **Who is supporting/hosting/maintaining the dataset?**  
+  Support and maintenance for the script and any generated dataset would be the responsibility of the individual or entity that uses it.
+
+- **How can the owner/curator/manager of the dataset be contacted?**  
+  Contact information is not provided, as the dataset creator and maintenance responsibilities are not specified.
