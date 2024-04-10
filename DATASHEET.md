@@ -6,10 +6,10 @@
 `Daily Incident Records Summary`
 
 ### Who created the dataset? 
-The dataset is derived from incident reports provided by the Norman Police Department, processed and structured by an unspecified entity using automated tools.
+`The dataset is derived from incident reports provided by the Norman Police Department, processed and structured by an unspecified entity using automated tools.`
 
 ### Who funded the creation of the dataset?
-`Information regarding funding is not explicitly provided.`
+`Information regarding funding is not being used science it is a college assignemt it is self funded to give credits for data it is normanpd `
 
 ## Dataset Composition
 
@@ -45,7 +45,7 @@ The dataset is derived from incident reports provided by the Norman Police Depar
 ## Legal and Ethical Considerations
 
 ### Were any ethical review processes conducted?
-`Not specified. Ethical considerations should include privacy protection, anonymization of personally identifiable information, and responsible use of sensitive data.`
+`Ethical considerations should include privacy protection, anonymization of personally identifiable information, and responsible use of sensitive data.`
 
 ### What legal and ethical considerations were made?
 - `Ensuring data anonymization to protect individual privacy.`
@@ -68,6 +68,6 @@ The dataset is derived from incident reports provided by the Norman Police Depar
 `Comprehensive documentation should include a detailed description of the dataset structure, variable definitions, preprocessing methodologies, and any assumptions or limitations of the data.`
 
 ### What languages is the documentation available in?
-`Not specified. Making documentation available in multiple languages can enhance accessibility for a global audience.`
+`Making documentation available in multiple languages can enhance accessibility for a global audience.`
 
 
