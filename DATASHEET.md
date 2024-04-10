@@ -1,66 +1,42 @@
-# Datasheet for Incident Report Data
+## Data Quality
 
-## Motivation
+- **How do you ensure the quality of the data?**  
+  Quality checks include validating the format and completeness of data extracted from PDFs, ensuring the accuracy of weather data fetched from the Open-Meteo API, and verifying the correctness of geolocation information. Manual review or automated unit tests could be part of the quality assurance process.
 
-- **For what purpose was the dataset created?**  
-  This dataset was created to analyze incidents reported in PDF formats, sourced from specific URLs. The primary goal is to augment the data with additional context such as weather conditions at the time of the incident and the geographical orientation relative to the town's center, aiming to provide richer insights for analytical purposes.
+- **What steps were taken to clean or preprocess the data?**  
+  Preprocessing steps involve cleaning text extracted from PDFs, standardizing date and time formats, and handling missing or incomplete data fields appropriately to ensure data consistency.
 
-- **Who created the dataset and on behalf of which entity?**  
-  The dataset creator and the entity behind it are not specified. This script is designed as a general tool for processing and augmenting incident report data.
+## Ethical Considerations
 
-- **Who funded the creation of the dataset?**  
-  Funding information is not provided.
+- **Were there any ethical concerns regarding the data collection and usage?**  
+  Ethical considerations may involve ensuring that the data does not include personally identifiable information or sensitive details that could compromise privacy or lead to misuse. Additionally, the use of third-party APIs for data augmentation (like weather data) should comply with their terms of service and ethical guidelines.
 
-## Composition
+- **How can the dataset be used responsibly?**  
+  Guidelines for responsible use should include recommendations for maintaining privacy, avoiding bias in analysis, and ensuring that the dataset's limitations are considered in any conclusions drawn from the data. Users should also be encouraged to apply the dataset in ways that positively impact society.
 
-- **What do the instances that comprise the dataset represent?**  
-  Instances represent individual incidents, including details such as the date and time, location, nature of the incident, and additional augmented data like weather conditions and geographical direction from the town's center.
+## Limitations and Bias
 
-- **How many instances are there in total (and in each split, if applicable)?**  
-  The total number of instances depends on the input URLs and the data they contain.
+- **What are the dataset’s limitations?**  
+  Limitations may include the dataset's reliance on specific sources (e.g., incidents reported in PDFs from certain URLs), potential biases in those sources, the geographic or temporal scope of the data, and any constraints related to the data augmentation processes used.
 
-- **Does the dataset contain all possible instances or is it a sample?**  
-  The dataset is a sample, dependent on the input URLs provided for incident reports in PDF format.
+- **How might biases in the dataset impact its use?**  
+  Potential biases include overrepresentation or underrepresentation of certain types of incidents, geographic biases due to the data sources, and biases introduced by the data augmentation process (e.g., weather conditions or location-specific information). These biases could affect the generalizability of findings derived from the dataset.
 
-- **What data does each instance consist of?**  
-  Each instance includes the incident date and time, incident number, location, nature, initial responding officer or entity (incident ORI), and augmented data such as weather code, side of town, etc.
+## Future Work
 
-- **Is there any missing information from individual instances?**  
-  Information might be missing if the source PDFs do not contain it or if data augmentation processes (e.g., weather code retrieval, location geocoding) fail.
+- **Are there any plans for updating or expanding the dataset?**  
+  Future updates might include incorporating more data sources, refining data augmentation processes, or extending the dataset to cover additional incident types or geographical areas. Plans for regular updates to reflect new incidents or improvements in data processing techniques could also be discussed.
 
-## Collection Process
+- **How can others contribute to the dataset?**  
+  Contributions could be facilitated through a public repository where others can suggest additions, corrections, or enhancements. Guidelines for contributions should ensure that any added data meets quality standards and aligns with the dataset's ethical considerations.
 
-- **How was the data associated with each instance acquired?**  
-  Data is initially extracted from PDFs containing incident reports. It's then augmented with weather codes retrieved via the Open-Meteo API and geographical analysis using the `geopy` library.
+## Access and Use
 
-- **Who was involved in the data collection process?**  
-  The process is automated; involvement is limited to the individual or entity executing the script and providing URLs for the source PDFs.
+- **How can the dataset be accessed?**  
+  While the dataset itself is dynamically generated, access to the script and any static versions of the dataset could be provided through a public repository, along with documentation on how to run the script and generate the dataset.
 
-## Preprocessing/cleaning/labeling
+- **Are there any restrictions on the use of the dataset?**  
+  Any use restrictions should be clearly stated, including limitations based on the terms of service of third-party data sources (like weather data APIs) and ethical guidelines for responsible use of the data.
 
-- **Was any preprocessing/cleaning/labeling of the data done?**  
-  Yes, the script tokenizes the text extracted from PDFs, parses relevant incident data, and augments it with additional information like weather conditions and geographical direction.
+Remember to review and adapt these additional sections based on the specific characteristics and context of your dataset. Providing comprehensive documentation in the datasheet ensures transparency, facilitates ethical and responsible use, and helps users understand the dataset's potential applications and limitations.
 
-- **Is the software used to preprocess/clean/label the instances available?**  
-  The script itself serves as the preprocessing tool. It uses libraries such as `requests`, `urllib.request`, `pypdf`, `geopy`, and `datetime` for its operations.
-
-## Uses
-
-- **Has the dataset been used for any tasks already?**  
-  The script is intended for general use in processing and augmenting incident report data. Specific use cases are not provided.
-
-- **What tasks could the dataset be used for?**  
-  The dataset could be used for analytical studies on incidents, such as understanding trends over time, the impact of weather conditions on incident rates, or geographical analysis of incidents within a town or city.
-
-## Distribution
-
-- **How will the dataset be distributed?**  
-  The dataset's distribution is not applicable here as it's generated dynamically by the script. However, the script itself can be shared and used by others.
-
-## Maintenance
-
-- **Who is supporting/hosting/maintaining the dataset?**  
-  Support and maintenance for the script and any generated dataset would be the responsibility of the individual or entity that uses it.
-
-- **How can the owner/curator/manager of the dataset be contacted?**  
-  Contact information is not provided, as the dataset creator and maintenance responsibilities are not specified.
