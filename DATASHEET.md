@@ -1,42 +1,73 @@
-## Data Quality
+# Dataset Documentation: Daily Incident Records Summary
 
-- **How do you ensure the quality of the data?**  
-  Quality checks include validating the format and completeness of data extracted from PDFs, ensuring the accuracy of weather data fetched from the Open-Meteo API, and verifying the correctness of geolocation information. Manual review or automated unit tests could be part of the quality assurance process.
+## Dataset Overview
 
-- **What steps were taken to clean or preprocess the data?**  
-  Preprocessing steps involve cleaning text extracted from PDFs, standardizing date and time formats, and handling missing or incomplete data fields appropriately to ensure data consistency.
+### What is the dataset's title?
+`Daily Incident Records Summary`
 
-## Ethical Considerations
+### Who created the dataset? 
+The dataset is derived from incident reports provided by the Norman Police Department, processed and structured by an unspecified entity using automated tools.
 
-- **Were there any ethical concerns regarding the data collection and usage?**  
-  Ethical considerations may involve ensuring that the data does not include personally identifiable information or sensitive details that could compromise privacy or lead to misuse. Additionally, the use of third-party APIs for data augmentation (like weather data) should comply with their terms of service and ethical guidelines.
+### Who funded the creation of the dataset?
+`Information regarding funding is not explicitly provided.`
 
-- **How can the dataset be used responsibly?**  
-  Guidelines for responsible use should include recommendations for maintaining privacy, avoiding bias in analysis, and ensuring that the dataset's limitations are considered in any conclusions drawn from the data. Users should also be encouraged to apply the dataset in ways that positively impact society.
+## Dataset Composition
 
-## Limitations and Bias
+### What type of data is included?
+`The dataset consists of structured data extracted from processed incident reports, including details such as the incident's nature, location, timing, and associated weather conditions.`
 
-- **What are the dataset’s limitations?**  
-  Limitations may include the dataset's reliance on specific sources (e.g., incidents reported in PDFs from certain URLs), potential biases in those sources, the geographic or temporal scope of the data, and any constraints related to the data augmentation processes used.
+### How is the dataset collected?
+`The collection process involves:`
+- `Retrieving PDF reports from provided URLs.`
+- `Extracting relevant data using Python scripts and regular expressions.`
+- `Augmenting data with additional context (e.g., weather conditions, geolocation coordinates).`
 
-- **How might biases in the dataset impact its use?**  
-  Potential biases include overrepresentation or underrepresentation of certain types of incidents, geographic biases due to the data sources, and biases introduced by the data augmentation process (e.g., weather conditions or location-specific information). These biases could affect the generalizability of findings derived from the dataset.
+### How many instances are there in total?
+`The total number of instances varies and is dependent on the number of incident reports processed from the provided URLs.`
 
-## Future Work
+## Data Preprocessing
 
-- **Are there any plans for updating or expanding the dataset?**  
-  Future updates might include incorporating more data sources, refining data augmentation processes, or extending the dataset to cover additional incident types or geographical areas. Plans for regular updates to reflect new incidents or improvements in data processing techniques could also be discussed.
+### What preprocessing/cleaning was done?
+- `Extraction of structured data elements using regular expressions.`
+- `Geolocation conversion of addresses into latitude and longitude.`
+- `Augmentation of the dataset with derived attributes like day of the week, time of day, and weather conditions.`
 
-- **How can others contribute to the dataset?**  
-  Contributions could be facilitated through a public repository where others can suggest additions, corrections, or enhancements. Guidelines for contributions should ensure that any added data meets quality standards and aligns with the dataset's ethical considerations.
+## Dataset Use
 
-## Access and Use
+### Who is the intended audience?
+`The dataset can serve a wide audience, including researchers analyzing public safety trends, urban planners, local government officials, and public service departments focusing on resource allocation and risk assessment.`
 
-- **How can the dataset be accessed?**  
-  While the dataset itself is dynamically generated, access to the script and any static versions of the dataset could be provided through a public repository, along with documentation on how to run the script and generate the dataset.
+### What tasks is the dataset suitable for?
+- `Analyzing incident patterns and frequencies.`
+- `Identifying temporal and spatial trends in incident reports.`
+- `Resource allocation and planning for public safety and emergency services.`
 
-- **Are there any restrictions on the use of the dataset?**  
-  Any use restrictions should be clearly stated, including limitations based on the terms of service of third-party data sources (like weather data APIs) and ethical guidelines for responsible use of the data.
+## Legal and Ethical Considerations
 
-Remember to review and adapt these additional sections based on the specific characteristics and context of your dataset. Providing comprehensive documentation in the datasheet ensures transparency, facilitates ethical and responsible use, and helps users understand the dataset's potential applications and limitations.
+### Were any ethical review processes conducted?
+`Not specified. Ethical considerations should include privacy protection, anonymization of personally identifiable information, and responsible use of sensitive data.`
+
+### What legal and ethical considerations were made?
+- `Ensuring data anonymization to protect individual privacy.`
+- `Consideration of the sensitivity of incident data and its ethical use in research and analysis.`
+
+## Dataset Maintenance
+
+### How will the dataset be maintained?
+`Details on dataset maintenance, updates, versioning strategy, and change logs are not provided but are crucial for ensuring the dataset's relevance and accuracy over time.`
+
+### Who is supporting/hosting/maintaining the dataset?
+`The dataset's maintenance responsibility lies with the creators or the entity utilizing the dataset for analysis, without specific details provided.`
+
+### Is there a point of contact for further inquiries?
+`A designated point of contact for questions, feedback, or contributions to the dataset should be established to facilitate communication and collaboration.`
+
+## Additional Documentation
+
+### Is there additional documentation available?
+`Comprehensive documentation should include a detailed description of the dataset structure, variable definitions, preprocessing methodologies, and any assumptions or limitations of the data.`
+
+### What languages is the documentation available in?
+`Not specified. Making documentation available in multiple languages can enhance accessibility for a global audience.`
+
 
